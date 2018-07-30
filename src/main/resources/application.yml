@@ -1,0 +1,22 @@
+server:
+    port: 8888
+spring:
+    mvc:
+        view:
+            prefix: /WEB-INF/
+            suffix: .jsp
+#keycloak:
+#       configurationFile: "classpath:keycloak.json"            
+keycloak:
+    realm: master
+    #auth-server-url: http://203.195.145.114:8080/auth
+    auth-server-url: http://localhost:8080/auth
+    ssl-required: none
+    resource: sp-keycloak1
+    credentials.secret: 11111111-1111-1111-1111-111111111111
+    use-resource-role-mappings: true  
+    principal-attribute: preferred_username
+logging:
+    level:
+        org.springframework: DEBUG
+        org.keycloak: DEBUG
